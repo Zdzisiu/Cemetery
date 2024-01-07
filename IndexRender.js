@@ -1,6 +1,6 @@
 class IndexRender extends HTMLElement {
    render() {
-
+      this.innerHTML = `Index`
    }
 
    connectedCallback() {
@@ -8,6 +8,31 @@ class IndexRender extends HTMLElement {
          this.render();
          this.rendered = true;
       }
+
+      switch (this.type){
+         case "ghost":
+            this.info = ghosts;
+            break;
+         case "shells":
+            this.info = shells;
+            break;
+         case "balloons":
+            this.info = balloons;
+            break;
+         case "code":
+            this.info = code;
+            break;
+         case "other":
+            this.info = other;
+            break;
+         default:
+            this.info = ghosts;
+            break;
+      }
+   }
+
+   renderNoteColumn() {
+
    }
 
    get type(){

@@ -21,11 +21,7 @@
 
 <body>
     <my-nav type="ghost"></my-nav>
-    <script>
-        var qs = new URLSearchParams(location.search);
-        var type = qs.get("type");
-        console.log(type)
-    </script>
+    
     <div id="page">
         <div id="indexNotes">
             <span id="indexTitle">Ghost Index</span>
@@ -45,7 +41,7 @@
 
                         <div class="listColumnR">
                             <a href="#MiniDev">MiniDev</a><br />
-                            <a href="">Antistress Blob</a><br />
+                            <a href="#antistress_blob">Antistress Blob</a><br />
                             <a href="">Witching hour</a><br />
                             <a href="">Mailbox</a><br />
                             <a href="">Model Skeleton</a><br />
@@ -89,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            <div class="workColumnL">
+            <div class="workColumnL antistress_blob">
                 <div class="mainBlock">
                     <div class="blockTitle"></div>
                     <div class="blockContent"></div>
@@ -101,6 +97,12 @@
             </div>
         </div>
     </div>
+    <script>
+        var qs = new URLSearchParams(location.search);
+        var type = qs.get("type");
+        console.log(type)
+        //document.getElementById('page').innerHTML = "<index-render type=" + type + "></index-render>"
+    </script>
 </body>
 
 </html>

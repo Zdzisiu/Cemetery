@@ -104,29 +104,32 @@ const shells = [
    new Item("M-z","MiniDev",new Date("29/11/2020"),"M-z model provided by A.R.I",""),
 ];
 
-
 const balloons = [
-   new Item("","released",(new Date()),""),
-   new Item("","released",(new Date()),""),
-   new Item("","released",(new Date()),""),
-   new Item("","released",(new Date()),""),
-   new Item("","released",(new Date()),""),
-   new Item("","released",(new Date()),"")
+   new Item("Cloth","released",(new Date("18/06/2023")),"An old balloon made for an abandoned ghost.",""),
+   new Item("Forest","released",(new Date("26/12/2020")),"An old balloon made for as of yet unreleased ghost, 'Plant'.",""),
+   new Item("Journal","released",(new Date("26/12/2020")),"An old balloon made for as of yet unreleased ghost, 'Gian'.",""),
+   new Item("Mail","released",(new Date("25/06/2023")),"A bunch of stained mail.",""),
+   new Item("Old Paper","released",(new Date("26/12/2020")),"An old balloon made for as of yet unreleased ghost, 'World Planner'.",""),
+   new Item("Pixel","released",(new Date("03/07/2020")),"Carefull, it's glitching.",""),
+   new Item("Simple Black","released",(new Date("26/12/2020")),"An old balloon made for as of yet unreleased ghost, 'Stuff'.",""),
+   new Item("Simple Pets","released",(new Date("25/04/2021")),"Simple, with a paws.",""),
+   new Item("Cat Paws","released",(new Date("08/07/2020")),"Purple, with paws.","")
 ]
 
 const code = [
-   new Item("ARRAYADD","Function",(new Date()),""),
-   new Item("ARRAYSEARCH","Function",(new Date()),""),
-   new Item("CHARSPLIT","Function",(new Date()),""),
-   new Item("CENSOR","Function",(new Date()),""),
-   new Item("ARRAYSWITCH","Function",(new Date()),""),
-   new Item("FakeWord","Function",(new Date()),""),
-   new Item("OWO","Function",(new Date()),""),
-   new Item("RemoveArrayFromArray","Function",(new Date()),""),
-   new Item("DecisionTree","Framework",(new Date()),"")
+   new Item("ARRAYADD","Function",(new Date("22/10/2021")),"adds all elements in an array (works only for integers)."),
+   new Item("ARRAYSEARCH","Function",(new Date("25/10/2021")),"This function is basically ASEARCH, it searches for the position of the element in an array but you can make it case insensitive and it works for simple arrays."),
+   new Item("CHARSPLIT","Function",(new Date("26/10/2021")),"SPLIT() refused to split a word into single characters so I made my own function for that."),
+   new Item("CENSOR","Function",(new Date("22/10/2021")),"Censor whatever naughty words you are using."),
+   new Item("ARRAYSWITCH","Function",(new Date("18/08/2023")),"Function allowing moving in the array forward or backwards."),
+   new Item("FakeWord","Function",(new Date("25/10/2021")),"Generate a fake word by stringing letters/syllabs according to some weird rules."),
+   new Item("OWO","Function",(new Date("24/11/2021")),"It's cursed."),
+   new Item("RemoveArrayFromArray","Function",(new Date("23/06/2023")),"Remove and array from another array."),
+   new Item("DecisionTree","Framework",(new Date("09/11/2023")),"Decision Tree Framework for all your text adventure needs! A simple 'framework' (like 2 functions) that allows you to make text adventure/visual novel style ghosts/dialogue trees! Demo Ghost: <a href='https://github.com/Zdzisiu/The-Maze/releases/'>Gamma</a>.")
 ]
 
-const misc = [
-   new Item("Achievements","plugin",(new Date()),""),
-   new Item("Image Manipulation Saori","saori basic",(new Date()),"")
+const other = [
+   new Item("Achievements","plugin",(new Date("— 05.06.2023")),"Allows the devs to add achievements and the users to see them!","https://github.com/Zdzisiu/Achievements-Plugin/releases"),
+   new Item("Image Manipulation Saori","saori basic",(new Date("— 27.04.2023")),"A saori basic allowing for manipulating images in various ways.","https://github.com/Zdzisiu/Color-Saori/releases"),
+   new Item("Catlendar","calendar skin",(new Date(" — 24.09.2023")),"Cat + Calendar (Etc. Jam 2023 Submission).","https://github.com/Zdzisiu/Catlendar/releases")
 ]
