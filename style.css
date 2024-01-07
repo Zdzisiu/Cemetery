@@ -1,0 +1,383 @@
+:root {
+    --text: white;
+    --accent: #34b6e9;
+    --secondary: #8e9fb1;
+    --main: #21252c;
+    --accentAlt: #25485B;
+    --secondaryAlt: #444D58;
+    --mainAlt: #171A21;
+    --cardSize: 400px;
+}
+
+* {
+    text-transform: uppercase;
+    box-sizing: border-box
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+body {
+    background-color: #21262d;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    font-size: 15px;
+}
+
+header {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 3px var(--text) solid;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 70px;
+}
+
+#nameChange {
+    font-size: 64px;
+    color: var(--accent);
+    text-shadow: 0px 12px 4px #030304;
+    font-weight: bold;
+
+}
+
+.regular {
+    font-size: 24px;
+    color: var(--text);
+}
+
+#textBlock {
+    position: absolute;
+    margin-left: 590px;
+    margin-right: 150px;
+    margin-top: 20px;
+}
+
+.mainText {
+    font-size: 30px;
+    color: var(--main);
+    font-weight: bold;
+}
+
+.secondaryText {
+    font-size: 32px;
+    color: var(--secondary);
+    font-family: 'Inter', sans-serif;
+    font-weight: lighter;
+}
+
+nav>a {
+    padding-left: 5px;
+    padding-right: 5px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: var(--secondary);
+    font-family: 'Inter', sans-serif;
+    font-weight: lighter;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    align-self: end;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+#stickyNote {
+    position: absolute;
+    width: 450px;
+    height: 400px;
+    padding: 50px;
+    rotate: 10deg;
+    margin-top: calc(var(--cardSize) * 1.45);
+    margin-left: 220px;
+}
+
+.site_type {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 60px;
+    font-size: 20px;
+    color: var(--secondary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.logo svg {
+    width: 350px;
+}
+
+.logo {
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+#wrapper {
+    position: relative;
+    width: auto;
+    height: auto;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+.bg_one,
+.bg_two,
+.bg_three,
+.bg_rotated {
+    position: absolute;
+    width: var(--cardSize);
+    height: var(--cardSize);
+    box-shadow: 0 20px 1px 0 rgba(0, 0, 0, 0.50);
+}
+
+.bg_one {
+    background-color: var(--secondaryAlt);
+    z-index: -90;
+}
+
+.bg_two {
+    background-color: var(--mainAlt);
+    margin-top: calc(var(--cardSize) / 2);
+    margin-left: calc(var(--cardSize) / 2);
+    z-index: -95;
+}
+
+.bg_three {
+    background-color: var(--accentAlt);
+    margin-top: var(--cardSize);
+    margin-left: var(--cardSize);
+    z-index: -100;
+}
+
+.bg_rotated {
+    background-color: var(--secondaryAlt);
+    margin: auto;
+    margin-top: calc(var(--cardSize) * 1.3);
+    margin-right: calc(var(--cardSize) * 2.3);
+    z-index: -85;
+    width: 500px;
+    height: 400px;
+    left: 0;
+    right: 0;
+    rotate: 10deg;
+}
+
+#indexNotes {
+    margin-left: 20px;
+    margin-top: 50px;
+    float: left;
+}
+
+.noteMain,
+.noteAccent,
+.noteSecondary {
+    width: 350px;
+    height: 250px;
+    box-shadow: 0 20px 1px 0 rgba(0, 0, 0, 0.50);
+    position: relative;
+    margin-top: 20px;
+}
+
+.noteMain,
+.noteSecondary {
+    margin-left: 100px;
+}
+
+.noteMain {
+    background: var(--mainAlt);
+}
+
+.noteAccent {
+    background: var(--accentAlt);
+}
+
+.noteSecondary {
+    background: var(--secondaryAlt);
+}
+
+.list {
+    line-height: 200%;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.listColumnR > a,
+.listColumnL > a {
+    color: var(--text);
+}
+
+.listColumnR {
+    float: right;
+    margin-right: 20px;
+}
+
+.listColumnL {
+    float: left;
+}
+
+#indexTitle {
+    position: absolute;
+    color: var(--accent);
+    font-size: 32px;
+    margin-left: 65px;
+    top: 40px;
+    text-shadow: 0px 10px 4px #030304;
+    z-index: 10;
+}
+
+#page {
+    position: absolute;
+}
+
+.noteTitleRight,
+.noteTitleLeft {
+    position: absolute;
+    font-size: 25px;
+    color: var(--secondary);
+    min-width: 200px;
+    z-index: 11;
+    margin-bottom: 50px;
+    text-shadow: 0px 10px 4px #030304;
+    top:-20px;
+}
+
+.noteTitleRight {
+    margin-left: 300px;
+}
+
+.noteTitleLeft {
+    margin-left: 20px;
+}
+
+.noteWrapper {
+    position: relative;
+    height: 300px;
+    width: auto;
+}
+
+.secondaryBlock,
+.accentBlock,
+.mainBlock {
+    height: 170px;
+    display: inline-block;
+    box-shadow: 0 20px 1px 0 rgba(0, 0, 0, 0.50);
+}
+
+.secondaryBlock,
+.accentBlock {
+    width: 550px;
+}
+
+.mainBlock {
+    width: 350px;
+    background-color: var(--mainAlt);
+}
+
+.imgWrapper img {
+    height: 150px;
+    margin-top: 30px;
+}
+
+.imgWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.secondaryBlock {
+    margin-right: 50px;
+    background-color: var(--secondaryAlt);
+    float: left;
+}
+
+.accentBlock {
+    margin-left: 50px;
+    background-color: var(--accentAlt);
+    float: right;
+}
+
+.workWrapper {
+    float: right;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+.workColumnR,
+.workColumnL {
+    margin-bottom: 50px;
+}
+
+.workColumnR {
+    margin-left: 50px;
+}
+
+.workColumnL {
+    margin-right: 50px;
+}
+
+.blockTitle {
+    position: relative;
+    color: var(--accent);
+    font-size: 32px;
+    margin-top: -35px;
+    text-shadow: 0px 10px 4px #030304;
+    z-index: 10;
+}
+
+
+.workColumnR .blockTitle {
+    margin-left: -50px;
+}
+
+.workColumnL .blockTitle {
+    margin-right: -50px;
+    float: right;
+}
+
+.blockContent {
+    position: absolute;
+    padding: 15px;
+    width: inherit;
+
+}
+
+.blockContent .secondaryText {
+    color: var(--secondary);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.desc {
+    width: inherit;
+    margin-top: 50px;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.download {
+    margin-top: 10px;
+}
