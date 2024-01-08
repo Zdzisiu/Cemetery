@@ -101,7 +101,7 @@ const shells = [
    new Item("Sketchy","Cat","11/11/2023","A sketchy cat",""),
    new Item("Black Cat","Cat","08/10/2020","He sleep",""),
    //MiniDev
-   new Item("M-z","MiniDev","29/11/2020","M-z model provided by A.R.I","")
+   new Item("M-z","Minidev","29/11/2020","M-z model provided by A.R.I","")
 ];
 
 const balloons = [
