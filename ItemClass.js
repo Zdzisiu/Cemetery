@@ -83,7 +83,7 @@ const shells = [
    new Item("A bottle of souls","Hydrate","21/08/2022","Don't ask where I got them",""),
    new Item("Fishbowl","Hydrate","10/09/2021 ","Comes with fish",""),
    new Item("Teacup","Hydrate","29/12/2020","A teacup :D",""),
-   new Item("Lava","Hydrate","10/09/2021 ","Careful: Hot",""),
+   new Item("Lava in a Cup","Hydrate","10/09/2021 ","Careful: Hot",""),
    new Item("Potion","Hydrate","03/01/2021","Heal yourself",""),
    new Item("Poison","Hydrate","03/01/2021","Kill someone",""),
    new Item("Bleach","Hydrate","31/01/2021","Tasty",""),
