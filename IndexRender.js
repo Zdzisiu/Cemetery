@@ -158,7 +158,7 @@ class IndexRender extends HTMLElement {
                 <div class="blockTitle"></div>
                 <div class="blockContent">
                     <div class="imgWrapper">
-                        <img src="img/${this.type}/${item.name}.png" alt="${item.name}">
+                        <img src="img/${this.type}/${item.state}/${item.name}.png" alt="${(this.type == "code") ? "No image :(" : item.name}">
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@ const ghosts = [
    new Item("Model Skeleton","released",["19/06/2023",null],"Click his bones<br>Made in collaboration with <a href='https://ecclysium.github.io/'>Ecclysium</a>.","","1.0.0"),
    new Item("Cat","released",["08/07/2020","09/10/2020"],"He purrs. He meows. Nothing less. Nothing more","https://github.com/Zdzisiu/Cat/blob/main/cat.nar","1.0.3"),
    new Item("Hydrate","released",["20/08/2020","26/08/2022"],"Hydrate yourself!<br>Made in collaboration with <a href='https://ukagaka.zichqec.com'>Zichqec</a>.","https://ukagaka.zichqec.com/ghost/index#hydrate","1.2.1"),
-   new Item("Maze","released",["09/11/2023","09/11/2023"],"Go on a maze adventure narrated by Gamma!","https://github.com/Zdzisiu/The-Maze/releases/","0.0.2"),
+   new Item("The Maze","released",["09/11/2023","09/11/2023"],"Go on a maze adventure narrated by Gamma!","https://github.com/Zdzisiu/The-Maze/releases/","0.0.2"),
    //beta
    new Item("A.R.I Pets","in beta"),
    //progress
@@ -112,7 +112,7 @@ const balloons = [
    new Item("Old Paper","released","26/12/2020","An old balloon made for as of yet unreleased ghost, 'World Planner'.",""),
    new Item("Pixel","released","03/07/2020","Carefull, it's glitching.",""),
    new Item("Simple Black","released","26/12/2020","An old balloon made for as of yet unreleased ghost, 'Stuff'.",""),
-   new Item("Simple Pets","released","25/04/2021","Simple, with a paws.",""),
+   new Item("Simple Pets","released","25/04/2021","Simple, with paws.",""),
    new Item("Cat Paws","released","08/07/2020","Purple, with paws.","")
 ]
 
@@ -129,7 +129,7 @@ const code = [
 ]
 
 const other = [
-   new Item("Achievements","plugin","05/06/2023","Allows the devs to add achievements and the users to see them!","https://github.com/Zdzisiu/Achievements-Plugin/releases"),
+   new Item("Achievements","Plugin","05/06/2023","Allows the devs to add achievements and the users to see them!","https://github.com/Zdzisiu/Achievements-Plugin/releases"),
    new Item("Image Manipulation Saori","saori basic","27/04/2023","A saori basic allowing for manipulating images in various ways.","https://github.com/Zdzisiu/Color-Saori/releases"),
-   new Item("Catlendar","calendar skin","24/09/2023","Cat + Calendar (Etc. Jam 2023 Submission).","https://github.com/Zdzisiu/Catlendar/releases")
+   new Item("Catlendar","Calendar Skin","24/09/2023","Cat + Calendar (Etc. Jam 2023 Submission).","https://github.com/Zdzisiu/Catlendar/releases")
 ]
