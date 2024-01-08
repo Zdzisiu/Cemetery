@@ -1,0 +1,15 @@
+RemoveArrayFromArray
+{
+    _arrayBase = SPLIT(_argv[0],",")
+    _arrayRemove = SPLIT(_argv[1],",")
+
+    for _i=0;_i<ARRAYSIZE(_arrayRemove);_i++
+    {
+        for _j=0;_j<ARRAYSIZE(_arrayBase);_j++
+        {
+            if _arrayRemove[_i] == _arrayBase[_j]; _arrayBase[_j] = ""
+        }
+    }
+
+    SPLITEX("%(_arrayBase)",",")
+}

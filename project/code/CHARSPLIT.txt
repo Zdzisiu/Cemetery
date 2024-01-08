@@ -1,0 +1,13 @@
+//USE:
+//CHARSPLIT('word') will return 'w,o,r,d'
+CHARSPLIT
+{
+    _char = IARRAY //declare an array
+    _strlen = STRLEN(_argv[0]) //get how many letters the word has
+    for _i=0;_i<_strlen;_i++
+    {
+        _char[_i] = SUBSTR(_argv[0],_i,1)//get the [_i] letter from the word and save it into an array
+    }
+    --
+    _char //display the array
+}

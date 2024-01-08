@@ -1,0 +1,32 @@
+//Use this function by using it in a dialogue or your code
+//Code: CENSOR("word") || CENSOR(envelope)
+//Dialogue: %(CENSOR("word")) || %(CENSOR('word')) || %(CENSOR(envelope))
+
+CENSOR //CENSOR(string)
+{
+    _word = REPLACE(_argv[0]," ",",") //replace spaces with commas
+    _arlen = ARRAYSIZE(_word) //check how many words are to censor
+    _censor = ""
+    _print = ""
+    --
+    for _i=0;_i<_arlen;_i++ //loop working till i is the size og _arleng
+    {
+        _buffer = SUBSTR(_word[_i],0,1) //take the first letter
+        _len = STRLEN(_word[_i])//check how many letters there are
+        --
+        for _j=0;_j<_len;_j++ //loop to add one * for one letter of a word
+        {
+            _censor[_i] += "*" 
+        }
+        --
+        _censor[_i] = ERASE(_censor[_i],0,1) //erase the first *
+        _censor[_i] = INSERT(_censor[_i],0,_buffer) //add the saved letter to the begining
+    }
+    --
+    for _i=0;_i<ARRAYSIZE(_censor);_i++ //loop to add the words back together
+    {
+        _print += _censor[_i] + "  "
+    }
+    --
+    _print //show the censored words
+}

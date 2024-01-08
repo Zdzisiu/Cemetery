@@ -1,0 +1,62 @@
+/*
+This function is basically ASEARCH, it searches for the position of the element in an array but you can make it case insensitive and it works for simple arrays.
+
+How to use:
+ARRAYSEARCH(key,array,1/0)
+
+EXAMPLE:
+ARRAYSEARCH('Alpha','zeta,beta,gamma,alpha',1) would return -1, since it's case sensitive
+ARRAYSEARCH('Alpha','zeta,beta,gamma,alpha',0) and ARRAYSEARCH('Alpha','zeta,beta,gamma,alpha') would return 3, since it's case insensitive
+
+You can of course use variables:
+key = "Alpha"
+array = "zeta,beta,gamma,alpha"
+
+ARRAYSEARCH(key,array,0) and ARRAYSEARCH(key,array) would return 3
+ARRAYSEARCH(key,array,1) would return -1
+
+*/
+
+ARRAYSEARCH //ARRAYSEARCH(key,array,1/0)
+{
+	_return = ""
+	_a = SPLIT(_argv[1],",") // Split the simple array
+	_size = ARRAYSIZE(_a) //get the arrays size
+	--
+	if _argv[2] == "0" || _argv[2] == "" //if case insensitive
+	{
+		if TOLOWER(_argv[0]) _in_ TOLOWER(_argv[1]) //if the key exists in an array
+		{
+			for _i = 0, _x = 0; _x != 1 && _i < _size; _i++
+			{
+				if TOLOWER(_a[_i]) == TOLOWER(_argv[0]) //if the checked array element matches the key
+				{
+					_x = 1
+					_return = _i
+				}
+			}
+		}
+		else; _return = "-1" //if the key doesn't exists in an array
+	}
+	else //if case sensitive
+	{
+		if _argv[0] _in_ _argv[1] //if the key exists in an array
+		{
+			for _i = 0, _x = 0; _x != 1 && _i < _size; _i++
+			{
+				if _a[_i] == _argv[0] //if the checked array element matches the key
+				{
+					_x = 1
+					_return = _i
+				}
+			}
+		}
+		else; _return = "-1"
+	}
+	--
+	if _return == ""; _return = "-1" //if return is empty set to -1
+	--
+	_return
+
+	//Debug: "%(_size) : %(_a) : %(_return)"
+}

@@ -215,9 +215,15 @@ a {
 }
 
 .list {
-    line-height: 200%;
+    line-height: 175%;
     padding-top: 20px;
     padding-left: 20px;
+}
+
+.listColumnR,
+.listColumnL {
+    max-width: 160px;
+    display: inline-block;
 }
 
 .listColumnR > a,
@@ -226,8 +232,7 @@ a {
 }
 
 .listColumnR {
-    float: right;
-    margin-right: 20px;
+    margin-left: 10px;
 }
 
 .listColumnL {
@@ -238,7 +243,7 @@ a {
     position: absolute;
     color: var(--accent);
     font-size: 32px;
-    margin-left: 65px;
+    margin-left: 25px;
     top: 40px;
     text-shadow: 0px 10px 4px #030304;
     z-index: 10;
@@ -292,10 +297,12 @@ a {
     background-color: var(--mainAlt);
 }
 
+
 .imgWrapper img {
     height: 150px;
     margin-top: 30px;
 }
+
 
 .imgWrapper {
     display: flex;
@@ -321,7 +328,8 @@ a {
 }
 .workColumnR,
 .workColumnL {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    height: 170px;
 }
 
 .workColumnR {
@@ -336,9 +344,10 @@ a {
     position: relative;
     color: var(--accent);
     font-size: 32px;
-    margin-top: -35px;
+    margin-top: -20px;
     text-shadow: 0px 10px 4px #030304;
     z-index: 10;
+    width: inherit
 }
 
 
@@ -346,16 +355,24 @@ a {
     margin-left: -50px;
 }
 
-.workColumnL .blockTitle {
-    margin-right: -50px;
+.workColumnR .mainBlock {
     float: right;
+}
+
+.workColumnL .mainBlock {
+    float: left;
+}
+
+.workColumnL .blockTitle {
+    margin-left: 50px;
+    text-align: end;
 }
 
 .blockContent {
     position: absolute;
     padding: 15px;
     width: inherit;
-
+    margin-top: -10px;
 }
 
 .blockContent .secondaryText {
@@ -365,8 +382,9 @@ a {
 }
 
 .desc {
-    width: inherit;
-    margin-top: 50px;
+    max-width: inherit;
+    height: 60px;
+    margin-bottom: 10px;
     clear: both;
 }
 
@@ -378,6 +396,14 @@ a {
     float: right;
 }
 
+.infoContent {
+    height: 50px;
+}
+
 .download {
-    margin-top: 10px;
+    
+}
+
+#page a:hover {
+    text-decoration: underline;
 }

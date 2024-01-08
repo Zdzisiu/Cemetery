@@ -1,0 +1,128 @@
+//====Decission Tree Framework====
+//==Arrays==
+
+//This example uses static arrays, but they can easily be dynamic for a varying decision trees
+
+//Here you put in your choices in the format "ID,Choice Text"
+Choices : array
+{
+	"left,Go left"
+	"right,Go right"
+	"forward,Go forward"
+}
+
+//Here you establish all of your paths based on IDs of your choices, those can be numbers, letters, words and symbols
+//You can make paths of any length, and they don't have to all have the same length
+Paths : array
+{
+	"forward,left,right"
+	"right,left,forward"
+	"left,forward,right"
+}
+
+//Here you put in your endings, in the same order as your paths
+//index of the path and index of your ending should be the same
+Endings : array
+{
+	"Ending 1"
+	"Ending 2"
+	"Ending 3"
+
+
+}
+
+//Here you put flavor text that is displayed after a choice. You can make it conditional, or random using "|" as separator
+FlavorText : array
+{
+	"Flavor Text 1"
+
+	"Flavor text 2.0|Flavor Text 2.1"
+
+	"Flavor text 3"
+}
+
+//Here you put in the text that displays when the user chooses a choice with no ending/further path
+WrongTurn
+{
+	"There is no ending here"
+}
+
+//Framework
+OnPathChoice : all
+{
+	"\0\s[0]\b2"
+
+	_choice = reference0
+	_choiceID = 0
+
+	//Get the index position of the user choice
+	for _i = 0; _i < ARRAYSIZE(Choices);_i++
+	{
+		if _choice[0] == Choices[_i][0]; _choiceID = _i
+	}
+
+	nextChoices = IARRAY
+
+	//Find the next possible choices that lead to an ending
+	foreach Paths ; _path
+	{
+		if _path[choiceNumber] == _choice && _path[1+choiceNumber] != ""; nextChoices ,= _path[1+choiceNumber]
+	}
+
+	Path ,= _choice
+	choiceNumber++
+
+	if ARRAYSIZE(nextChoices) == 0 && ASEARCH("%(Path)",Paths) != -1 //Render an ending if there are no next choices and the path leads to an ending
+	{
+		//Here you can put any additional flags and text and checks for your endings
+
+		_ending = ASEARCH("%(Path)",Paths) //ID of the ending
+
+		Endings[_ending]
+
+		"\n\n\![*]\q[Close,close]"
+	}
+	else
+	{
+		if ASEARCH("%(Path)",Paths) == -1 && ARRAYSIZE(nextChoices) == 0 //Render the wrong path text and reset everything if the path doesn't lead to any ending
+		{
+			Path = IARRAY
+			choiceNumber = 0
+
+			WrongTurn
+		}
+		else
+		{
+
+			ANY(SPLIT(FlavorText[_choiceID],"|")) //Or render one of the flavor texts 
+		}
+
+		"\n\n[half]"
+
+		RenderChoices(Choices) //Render Choices
+	}
+
+}
+
+RenderChoices : all
+{
+	"\_q"
+
+	_choiceID = IARRAY
+
+	foreach _argv; _nextChoice
+	{
+		for _i = 0; _i < ARRAYSIZE(Choices);_i++
+		{
+			if _nextChoice[0] == Choices[_i][0]; _choiceID ,= _i
+		}
+	}
+
+	foreach _choiceID; _choice
+	{
+		"\__q[OnPathChoice," + Choices[_choice][0] + "]" + Choices[TOINT(_choice)][1] + "\__q\n"
+	}
+
+
+	"\n\n\![*]\q[Close,close]\_q"
+}

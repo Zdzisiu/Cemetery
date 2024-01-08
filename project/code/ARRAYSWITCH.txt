@@ -1,0 +1,59 @@
+/*
+ARRAYSWITCH(direction,position,array)
+
+direction: - | +
+position: current position inside the array (int) or the item in the array
+array: the array
+
+return: item before or after the current item
+
+if position is set to zero and direction to left (-), it returns the last item in the array (circling back)
+if position is set to the last item and direction to the right (+), it returns the first item in the array (circling back)
+
+examples:
+_array = ("red","blue","orange","white","green")
+ARRAYSWITCH("-",4,_array)
+return: "white"
+
+_array = ("red","blue","orange","white","green")
+ARRAYSWITCH("+",0,_array)
+return: "blue"
+
+_array = ("red","blue","orange","white","green")
+ARRAYSWITCH("+",4,_array)
+return: "red"
+
+_array = ("red","blue","orange","white","green")
+ARRAYSWITCH("+","blue",_array)
+return: "orange"
+
+_array = ("red","blue","orange","white","green")
+ARRAYSWITCH("+","green",_array)
+return: "red"
+*/
+
+ARRAYSWITCH
+{
+    _direction = _argv[0]
+    _array = IARRAY
+    _pos = 0
+
+    for _i = 2;_i < ARRAYSIZE(_argv);_i++
+    {
+        _array ,= _argv[_i]
+    }
+
+    _max = ARRAYSIZE(_array)-1
+
+    if ISINTSTR(_argv[1]) || GETTYPE(_argv[1]) == 1; _pos = TOINT(_argv[1])
+    else; _pos = ASEARCH(_argv[1],_array)
+
+    if _direction == "+"; _pos++
+    elseif _direction == "-"; _pos--
+
+    if _pos < 0; _pos = _max
+    elseif _pos > _max; _pos = 0
+
+    _array[_pos]
+    LOGGING(_array[_pos] +","+ _direction +","+ _pos +","+ _max)
+}

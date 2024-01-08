@@ -21,87 +21,18 @@
 
 <body>
     <my-nav type="ghost"></my-nav>
-    
+    <script>
+        function scrollToForm(scroll) {
+            document.querySelector('#' + scroll).scrollIntoView({behavior: 'smooth'});
+          }
+    </script>
     <div id="page">
-        <div id="indexNotes">
-            <span id="indexTitle">Ghost Index</span>
-            <div class="noteWrapper">
-                <span class="noteTitleRight">Released</span>
-                <div class="noteMain">
-                    <div class="list">
-                        <div class="listColumnL">
-                            <a href="#MiniDev">MiniDev</a><br />
-                            <a href="">Antistress Blob</a><br />
-                            <a href="">Witching hour</a><br />
-                            <a href="">Mailbox</a><br />
-                            <a href="">Model Skeleton</a><br />
-                            <a href="">Cat</a><br />
-                            <a href="">Hydrate</a>
-                        </div>
-
-                        <div class="listColumnR">
-                            <a href="#MiniDev">MiniDev</a><br />
-                            <a href="#antistress_blob">Antistress Blob</a><br />
-                            <a href="">Witching hour</a><br />
-                            <a href="">Mailbox</a><br />
-                            <a href="">Model Skeleton</a><br />
-                            <a href="">Cat</a><br />
-                            <a href="">Hydrate</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="noteWrapper">
-                <div class="noteTitleLeft">in beta</div>
-                <div class="noteAccent"></div>
-            </div>
-            <div class="noteWrapper">
-                <div class="noteTitleRight">in progress</div>
-                <div class="noteSecondary"></div>
-            </div>
-        </div>
-
-        <div class="workWrapper">
-            <div class="workColumnR">
-                <div class="secondaryBlock">
-                    <div class="blockTitle">MiniDev</div>
-                    <div class="blockContent">
-                        <div class="left">
-                            <div><span class="secondaryText">Release Date:</span> 03.07.2020</div>
-                            <div><span class="secondaryText">Last Update:</span> 10.04.2021</div>
-                        </div>
-                        <div class="right"><span class="secondaryText">Last Version:</span> 1.1.2</div>
-                        <div class="desc">MiniDev is a a little robot software, meant to assist you throughout the
-                            day. He has various functions and is customizable.</div>
-                        <div class="download right"><a href="">DOWNLOAD</a></div>
-                    </div>
-                </div>
-                <div class="mainBlock">
-                    <div class="blockTitle"></div>
-                    <div class="blockContent">
-                        <div class="imgWrapper">
-                            <img src="img/ghost/minidev.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="workColumnL antistress_blob">
-                <div class="mainBlock">
-                    <div class="blockTitle"></div>
-                    <div class="blockContent"></div>
-                </div>
-                <div class="accentBlock">
-                    <div class="blockTitle">ANTISTRESS bLOB</div>
-                    <div class="blockContent"></div>
-                </div>
-            </div>
-        </div>
     </div>
     <script>
         var qs = new URLSearchParams(location.search);
         var type = qs.get("type");
         console.log(type)
-        //document.getElementById('page').innerHTML = "<index-render type=" + type + "></index-render>"
+        document.getElementById('page').innerHTML = "<index-render type=" + type + "></index-render>"
     </script>
 </body>
 

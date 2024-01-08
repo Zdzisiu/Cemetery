@@ -1,0 +1,16 @@
+//Use this function by using it in a dialogue or your code
+//Code: ARRAYADD('1,2,3,4') || ARRAYADD(array) 
+//Dialogue: %(ARRAYADD('1,2,3,4')) || %(ARRAYADD(array))
+ARRAYADD //ARRAYADD(array)
+{
+    _return = 0
+    _a = SPLIT(_argv[0],",") //split array
+    _size = ARRAYSIZE(_a) //get the arrays size
+    --
+    for _i=0;_i<_size;_i++
+    {
+        _return += TOINT(_a[_i]) //add the numbers
+    }
+    --
+    _return //return the result
+}

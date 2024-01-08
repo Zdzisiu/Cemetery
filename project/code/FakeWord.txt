@@ -1,0 +1,161 @@
+/*
+    This function generates a random "word" which is just a string of letters with some rules
+
+    Arguments:
+    0: Min: Minimum amount of letters/sylabs
+    1: Max: Max amount of letters sylabs
+    2: alphabet/sylabs/both/custom: Which set to use (sylabs also includes vowels by themselves)
+    3: nonletter use 1/0 (')
+    4: Rule 1: Only one ' 1/0 
+    5: Rule 2: Don't repeat letters next to eachother 1/0 
+    6: Rule 3: Phonetic conditions 1/0 
+    7: if Rule 3 on: phonetic difference [1-10] (more than 10 can be used but I don't recommend it)
+
+	What are phonetic conditions?
+	Phonetic conditions basically check if two letters besides eachother are too close to each other in the character set and chooses a different, further letter
+	Don't think to much about it, just generate 5 words with one phonetic difference and see if it fits your needs, if you don't like how the words look, change the phonetic difference, basically just test around
+
+    Default values (if left an argument is left empty):
+    FakeWord(2,10,'alphabet',0,0,0,0)
+
+    IMPORTANT:
+    If you use sylabs rememeber that one sylab is counted like one character:
+    FakeWord(4,5,'sylabs',1,1,1,1,1) - max would be actually 10 characters
+    FakeWord(4,15,'sylabs',1,1,1,1,1) - max would be actually 30 characters
+
+*/
+FakeWord //FakeWord(min,max,alphabet/sylabs/both/custom,nonletters 1/0,rule 1: 1/0,rule 2: 1/0,rule 3: 1/0)
+{
+	_word = ""
+    _alphabet = "a b c d e f g h i j k l m n o p r s t u w x y z" // basic alphabet
+    //sylabs = letters from alphabets + vowel and vowels by themselves
+    _sylabs = "ba ca da fa ga ha ja ka la ma na pa ra sa ta va wa qa xa ya za be ce de fe ge he je ke le me ne pe re se te ve we qe xe ye ze bi ci di fi gi hi ji ki li mi ni pi ri si ti vi wi qi xi yi zi bo co do fo go ho jo ko lo mo no po ro so to vo wo qo xo yo zo bu cu du fu gu hu ju ku lu mu nu pu ru su tu vu wu qu xu yu zu a e i j o u"
+	//custom: you only want certain letters/sylabs/whatever but don't want to change default alphabet and sylabs? use custom, separate everything with a space
+    _custom = "xa xi xe xo va vi ve vo th st cz"
+    _nonLetters = "'"
+    _temp = ""
+    _num = 0
+    _newLetter = ""
+	_lettersOnly = IARRAY
+	_alphabetTemp = IARRAY
+	_letterprev = ""
+	_use = IARRAY
+    --
+    _min = TOINT(_argv[0])
+    _max = TOINT(_argv[1])
+    --
+    if _min == 0; _min = 2
+    --
+    if _max == 0; _max = 10
+    elseif _max < _min; _max = _min + 1
+    --
+    if _argv[2] == "alphabet"; _temp = _alphabet
+    elseif _argv[2] == "sylabs"; _temp = _sylabs
+    elseif _argv[2] == "both"; _temp = _alphabet + " " + _sylabs
+    elseif _argv[2] == "custom"; _temp = _custom
+    else; _temp = _alphabet
+    --
+	if TOINT(_argv[7]) == 0; _phNum = 1
+	else; _phNum = TOINT(_argv[7])
+	--
+	_lettersOnly = SPLIT(_temp," ")
+	--
+    if _argv[3] == "1" || _argv[3] == 1; _temp += " " + _nonLetters
+    --
+    _alphabetTemp = SPLIT(_temp," ")
+    --
+    _letters = RAND(ARRAYSIZE(_alphabetTemp))//how many letters/sylabs are there in the array?
+	--
+	_num = RAND(_max)+1
+	--
+	if _num < _min; _num = _min
+	--
+	for _j = 0; _j < _num; _j++
+	{
+		if _argv[6] == "1" || _argv[6] == 1 || (_j != 0 && _j != _num)
+		{
+			for _x = 0; _x <= _phNum; _x++
+			{
+				_newLetter = RAND(ARRAYSIZE(_alphabetTemp))
+				--
+				if _newLetter == _letters
+				{
+					if RAND(2) == 1
+					{
+						if _alphabetTemp[_letters - _newLetter] == ""; _letters = RAND(ARRAYSIZE(_alphabetTemp))
+						else; _letters += _x - _newLetter
+					}
+					else
+					{
+						if _alphabetTemp[_letters + _newLetter] == ""; _letters = RAND(ARRAYSIZE(_alphabetTemp))
+						else; _letters += _x + _newLetter
+					}
+				}
+				elseif _letterprev == _alphabetTemp[_letters + _x]
+				{
+					if RAND(2) == 1
+					{
+						if _alphabetTemp[_letters - _newLetter] == ""; _letters = RAND(ARRAYSIZE(_alphabetTemp))
+						else; _letters += _x - _newLetter
+					}
+					else
+					{
+						if _alphabetTemp[_letters+_newLetter] == ""; _letters = RAND(ARRAYSIZE(_alphabetTemp))
+						else; _letters += _x + _newLetter
+					}
+				}
+				elseif _letterprev == _alphabetTemp[_letters - _x]
+				{
+					if RAND(2) == 1
+					{
+						if _alphabetTemp[_letters-_newLetter] == ""; _letters = RAND(ARRAYSIZE(_alphabetTemp))
+						else; _letters += _x-_newLetter
+					}
+					else
+					{
+						if _alphabetTemp[_letters+_newLetter] == ""; _letters = RAND(ARRAYSIZE(_alphabetTemp))
+						else; _letters += _x+_newLetter
+					}
+				}
+			}
+		}
+		--
+		if _argv[5] == "1" || _argv[5] == 1
+		{
+			for _i = 0; _alphabetTemp[_letters] == _letterprev; _i++
+			{
+				if _alphabetTemp[_letters] == _letterprev; _letters = RAND(ARRAYSIZE(_alphabetTemp))
+				else; break
+			}
+		}
+		--
+		if _argv[4] == "1" || _argv[4] == 1
+		{
+			if "'" _in_ _word && "'" _in_ _alphabetTemp[_letters]
+			{
+				_letters = RAND(ARRAYSIZE(_lettersOnly))
+				_word = REPLACE(_word,"'",_lettersOnly[_letters])
+			}
+		}
+		--
+		if _letterprev == "'" && _alphabetTemp[_letters] == "'"
+		{
+			_letters = RAND(ARRAYSIZE(_lettersOnly))
+			_word += _lettersOnly[_letters]
+			_letterprev = _lettersOnly[_letters]
+		}
+		else
+		{
+			_word += _alphabetTemp[_letters]
+			_letterprev = _alphabetTemp[_letters]
+		}
+	}
+	--
+	_buffer = SUBSTR(_word,0,1)
+	_word = ERASE(_word,0,1)
+	_word = INSERT(_word,0,TOUPPER(_buffer))
+	--
+	_word
+	//Debug: 
+	//"%(_word)\nMin: %(_min) | Max: %(_max) | Num: %(_num)"
+}
