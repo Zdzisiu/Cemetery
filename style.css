@@ -11,7 +11,7 @@
 
 * {
     text-transform: uppercase;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 a {
@@ -23,7 +23,9 @@ body {
     background-color: #21262d;
     font-family: 'Inter', sans-serif;
     color: var(--text);
-    font-size: 15px;
+    font-size: 100%;
+    width: 100%;
+    width: 100%;
 }
 
 header {
@@ -34,7 +36,7 @@ header {
     border-bottom: 3px var(--text) solid;
     margin-left: 5%;
     margin-right: 5%;
-    height: 70px;
+    height: 5vw;
 }
 
 #nameChange {
@@ -53,8 +55,8 @@ header {
 #textBlock {
     position: absolute;
     margin-left: 590px;
-    margin-right: 150px;
-    margin-top: 20px;
+    margin-top: -80px;
+    max-width: 850px;
 }
 
 .mainText {
@@ -97,7 +99,7 @@ nav {
     height: 400px;
     padding: 50px;
     rotate: 10deg;
-    margin-top: calc(var(--cardSize) * 1.45);
+    margin-top: 480px;
     margin-left: 220px;
 }
 
@@ -124,6 +126,12 @@ nav {
 
 a {
     text-decoration: none;
+}
+
+.indexWrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 #wrapper {
@@ -171,8 +179,8 @@ a {
 .bg_rotated {
     background-color: var(--secondaryAlt);
     margin: auto;
-    margin-top: calc(var(--cardSize) * 1.3);
-    margin-right: calc(var(--cardSize) * 2.3);
+    margin-top: calc(var(--cardSize) * 1.25);
+    margin-left: -300px;
     z-index: -85;
     width: 500px;
     height: 400px;
