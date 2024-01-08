@@ -61,7 +61,7 @@ class IndexRender extends HTMLElement {
          }
          return 0;
      });
-         indexLinkArrays[state] = stateArray.map(obj => `<a href="javascript: scrollToForm('${obj.name.replaceAll(' ','_')}');">${obj.name}</a><br/>`)
+         indexLinkArrays[state] = stateArray.map(obj => `<a href="javascript: scrollToForm('${obj.name.toLowerCase().replaceAll(' ','_')}');">${obj.name.toLowerCase()}</a><br/>`)
          if (!noteInfo[state]) {
             noteInfo[state] = [];
          }
@@ -141,7 +141,7 @@ class IndexRender extends HTMLElement {
                const block = `
             <div class="workColumn${(blockClass == 'secondaryBlock') ? 'R' : 'L'}">
             <div class="${blockClass}">
-                <div class="blockTitle" id="${item.name.replaceAll(' ','_')}">${item.name}</div>
+                <div class="blockTitle" id="${item.name.toLowerCase().replaceAll(' ','_')}">${item.name}</div>
                 <div class="blockContent">
                 <div class="infoContent">
                     <div class="left">
