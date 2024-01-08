@@ -21,7 +21,7 @@ const ghosts = [
    new Item("Mailbox","released",["25/06/2023",null],"A lone mailbox stands in a field.","https://github.com/Zdzisiu/Mailbox/releases/","1.0.0"),
    new Item("Model Skeleton","released",["19/06/2023",null],"Click his bones<br>Made in collaboration with <a href='https://ecclysium.github.io/'>Ecclysium</a>.","","1.0.0"),
    new Item("Cat","released",["08/07/2020","09/10/2020"],"He purrs. He meows. Nothing less. Nothing more","https://github.com/Zdzisiu/Cat/blob/main/cat.nar","1.0.3"),
-   new Item("Hydrate","released",["20/08/2020","26/08/2022"],"Hydrate yourself!<br>Made in collaboration with <a href='https://ukagaka.zichqec.com'>Zichqec</a>.","https://ukagaka.zichqec.com/ghost/index#hydrate","1.2.1"),
+   new Item("Hydrate","released",["20/08/2020","26/08/2022"],"Hydrate yourself!<br>Made in collaboration with <a href='https://ukagaka.zichqec.com'>Zichqec</a>.","https://ukagaka.zichqec.com/ghost/index","1.2.1"),
    new Item("The Maze","released",["09/11/2023","09/11/2023"],"Go on a maze adventure narrated by Gamma!","https://github.com/Zdzisiu/The-Maze/releases/","0.0.2"),
    //beta
    new Item("A.R.I Pets","in beta"),
