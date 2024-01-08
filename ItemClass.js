@@ -130,6 +130,6 @@ const code = [
 
 const other = [
    new Item("Achievements","Plugin","05/06/2023","Allows the devs to add achievements and the users to see them!","https://github.com/Zdzisiu/Achievements-Plugin/releases"),
-   new Item("Image Manipulation Saori","saori basic","27/04/2023","A saori basic allowing for manipulating images in various ways.","https://github.com/Zdzisiu/Color-Saori/releases"),
+   new Item("Image Manipulation Saori","Saori Basic","27/04/2023","A saori basic allowing for manipulating images in various ways.","https://github.com/Zdzisiu/Color-Saori/releases"),
    new Item("Catlendar","Calendar Skin","24/09/2023","Cat + Calendar (Etc. Jam 2023 Submission).","https://github.com/Zdzisiu/Catlendar/releases")
 ]
