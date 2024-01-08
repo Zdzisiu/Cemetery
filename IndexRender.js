@@ -146,7 +146,7 @@ class IndexRender extends HTMLElement {
                 <div class="infoContent">
                     <div class="left">
                         <div><span class="secondaryText">Release Date: </span>${(item.dates.constructor === Array) ? item.dates[0] : item.dates}</div>
-                        ${(item.dates[1] != null && item.dates.constructor === Array) ? '<div><span class="secondaryText">Last Update:</span>' + item.dates[1] + '</div>' : ''}
+                        ${(item.dates[1] != null && item.dates.constructor === Array) ? '<div><span class="secondaryText">Last Update: </span>' + item.dates[1] + '</div>' : ''}
                     </div>
                     ${(item.version != null) ? '<div class="right"><span class="secondaryText">Last Version: </span>' + item.version + '</div>' : ''}
                     </div>
