@@ -67,7 +67,7 @@ const shells = [
    new Item("Internet Teacup","Hydrate","31/12/2023","Don't keep me there for too long tho, I have stuff to do",""),
    new Item("Jar","Hydrate","31/12/2023","A jar",""),
    new Item("Juicer","Hydrate","31/12/2023","Jucier with juice and fruit",""),
-   new Item("Melting Snowman","Hydrate","31/12/2023","Very sad",""),
+   new Item("Snowman","Hydrate","31/12/2023","Very sad",""),
    new Item("Muk","Hydrate","31/12/2023","He's liquid so I stand by this decision",""),
    new Item("Paint Cup","Hydrate","31/12/2023","An ugly cup",""),
    new Item("Perfume","Hydrate","31/12/2023","a bottle of perfume",""),
