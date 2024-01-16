@@ -16,7 +16,7 @@ class Item {
 
 const ghosts = [
    new Item("MiniDev","released",["03/07/2020","10/04/2021"],"MiniDev is a little robot software, meant to assist you throughout the day. He has various functions and is customizable.","https://github.com/Zdzisiu/MiniDev/blob/main/MiniDev.nar","1.1.2"),
-   new Item("Antistress Blob","released",["23/09/2022","25/09/2022"],"Poke It","https://github.com/Zdzisiu/Antistress-Blob/releases/","1.0.2"),
+   new Item("Anti Stress Blob","released",["23/09/2022","25/09/2022"],"Poke It","https://github.com/Zdzisiu/Antistress-Blob/releases/","1.0.2"),
    new Item("Witching Hour","released",["19/05/2023","22/05/2023"],"Make potions and torment your apprentice.","https://github.com/Zdzisiu/Witching-Hour/releases/","1.0.1"),
    new Item("Mailbox","released",["25/06/2023",null],"A lone mailbox stands in a field.","https://github.com/Zdzisiu/Mailbox/releases/","1.0.0"),
    new Item("Model Skeleton","released",["19/06/2023",null],"Click his bones<br>Made in collaboration with <a href='https://ecclysium.github.io/'>Ecclysium</a>.","","1.0.0"),
