@@ -87,7 +87,7 @@ const shells = [
    new Item("Potion","Hydrate","03/01/2021","Heal yourself",""),
    new Item("Poison","Hydrate","03/01/2021","Kill someone",""),
    new Item("Bleach","Hydrate","31/01/2021","Tasty",""),
-   new Item("Martini Gore","Hydrate","10/09/2021 ","It's looking at you",""),
+   new Item("Martini Gore","Hydrate","10/09/2021 ","It's looking at you <br><br>[Shell contains gore elements]",""),
    new Item("Ink","Hydrate","03/01/2022","Ink",""),
    new Item("Paint Tube","Hydrate","04/01/2022","Paint, yum",""),
    new Item("Ghost Jam","Hydrate","23/05/2023","Made from 100% real ghosts",""),
