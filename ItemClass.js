@@ -93,6 +93,7 @@ const shells = [
    new Item("Ghost Jam","Hydrate","23/05/2023","Made from 100% real ghosts",""),
    new Item("Clear Remake","Hydrate","23/05/2023","A remake :D",""),
    new Item("Biblically Accurate Angel","Hydrate","16/11/2023","FEAR NOT MORTAL",""),
+   new Item("Bubble","Hydrate","20/08/2024","It's a bubble :D",""),
    //squid
    new Item("Biblically Accurate Angel","Squid","09/04/2023","FEAR NOT MORTAL",""),
    //Needle
